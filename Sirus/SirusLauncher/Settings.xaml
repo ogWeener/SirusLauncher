@@ -1,0 +1,35 @@
+﻿<Window x:Class="SirusLauncher.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SirusLauncher"
+        mc:Ignorable="d"
+        Title="Settings" Height="560" Width="880">
+    <Grid>
+        <Image Source="фон настройкиpng.png" Margin="-391,-85,-388,-130" />
+
+        <Image Source="рамка.png" Margin="-78,-93,-75,-74" Stretch="Fill" />
+
+        <Image Source="settings.png" Margin="26,10,815,486"/>
+        <TextBlock Text="Настройки" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="71,17,643,0" Foreground="White" Height="19" Width="158" TextAlignment="Center"/>
+
+        <TextBlock Text="Настройки Лаунчера" FontSize="15" VerticalAlignment="Top" Margin="581,40,10,0" Foreground="White" Height="19" Width="281" Background="#3391D4E8" HorizontalAlignment="Center" TextAlignment="Center"/>
+
+        <TextBlock Text=" Папка с игрой:" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="61,88,651,0" Foreground="White" Height="19" Width="160"/>
+        <Button Content="Изменить" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,89,375" Click="ChangeButton_Click" Height="39" Width="124" />
+        <TextBox x:Name="FilePathTextBox" Width="580" Height="39" Margin="62,0,230,375" VerticalAlignment="Bottom" HorizontalAlignment="Center" IsReadOnly="True"/>
+        <!-- Поле для отображения пути к файлу -->
+        <Button Content="Скачать полный клиент" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,525,322" Click="OpenWebsiteButton_Click" Height="36" Width="289" />
+
+        <CheckBox Content="Запускать при загрузке системы" IsChecked="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="107,252,0,0" Width="296" Foreground="White"/>
+        <CheckBox Content="Отключить проверку хэш файлов" IsChecked="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="107,286,0,0" Width="317" Foreground="White"/>
+
+        <TextBlock Text="Пользовательские данные:" FontSize="15" VerticalAlignment="Top" Margin="61,331,510,0" Foreground="White" Height="19" Width="301" HorizontalAlignment="Center"/>
+        <TextBox x:Name="FindPathTextBox" Width="580" Height="35" Margin="62,364,230,130" VerticalAlignment="Center" HorizontalAlignment="Center" IsReadOnly="True" Text="E:\VsNet Projects\Sirus\SirusLauncher\user.png"/>
+        <Button Content="Открыть" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,89,130" Click="OpenButton_Click" Height="36" Width="124"/>
+
+        <TextBlock Text="Последнее обновление клиента: 11 июня 2024, 23:28:27" FontSize="15" VerticalAlignment="Top" Margin="61,463,377,0" Foreground="White" Height="20" Width="434" HorizontalAlignment="Center"/>
+        <Button Content="Назад" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Click="BackButton_Click" Height="65" Width="148" />
+    </Grid>
+</Window>

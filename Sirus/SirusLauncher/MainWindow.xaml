@@ -1,0 +1,39 @@
+﻿<Window x:Class="SirusLauncher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SirusLauncher"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="560" Width="880">
+    <Grid>
+        <Image Source="фон настройкиpng.png" Margin="-347,-93,-348,-74" />
+
+        <Image Source="рамка.png" Margin="-74,-61,-74,-74" Stretch="Fill" />
+        <Image Source="рамкаобнвоа.png" Margin="210,-12,-24,109" />
+        
+        <Image Source="youtube1.png" MouseDown="Image_MouseDown" Tag="https://www.youtube.com/channel/UC3UOGO-jog7a-e_LIZylzjg" Margin="36,0,794,487" Cursor="Hand"/>
+        <Image Source="telegram.png" MouseDown="Image_MouseDown" Tag="https://t.me/sirus_su" Margin="102,0,726,487" Cursor="Hand"/>
+        <Image Source="vk.png" MouseDown="Image_MouseDown" Tag="https://vk.com/sirussu" Margin="168,0,662,487" Cursor="Hand"/>
+        <Image Source="support.png" MouseDown="Image_MouseDown" Tag="https://forum.sirus.su/" Margin="234,0,594,487" Cursor="Hand"/>
+
+        <Image Source="user.png" MouseDown="Accaunt_MouseDown" Margin="786,170,26,299" Cursor="Hand"/>
+        <Image Source="settings.png" MouseDown="Settings_MouseDown" Margin="788,258,26,209" Cursor="Hand"/>
+
+        <Image x:Name="MainImage" Source="фото обновление.png" Margin="346,60,108,167"/>
+        <Button x:Name="PreviousButton" Content="◀" Click="PreviousButton_Click" Width="50" Margin="374,121,448,223" />
+        <Button x:Name="NextButton" Content="▶" Click="NextButton_Click" Width="50" Margin="680,121,142,223" />
+        <Image x:Name="AccauntImage" Source="фото акк.png" Margin="74,78,566,35" Stretch="Fill"/>
+
+        <Button x:Name="StartButton" Content="Старт" Width="68" Height="73" Click="StartButton_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="475,421,329,35" />
+        <Button x:Name="BeginButton" Content="Начать" Width="267" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="569,414,36,35" />
+        <ProgressBar x:Name="ProgressBar" Width="267" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="569,414,36,35" Visibility="Hidden" />
+
+        <Image Source="рамка акк.png" Margin="50,78,548,35" Stretch="Fill" />
+
+        <Image x:Name="AccauntNameImage" Source="кнопка.png" Margin="74,384,566,65" Stretch="Fill"/>
+        <TextBlock Text="Leroy Jenkins" FontSize="21" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="96,405,594,0" Foreground="White" Height="34" Width="182" TextAlignment="Center"/>
+
+
+    </Grid>
+</Window>
