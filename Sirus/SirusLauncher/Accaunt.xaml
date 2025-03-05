@@ -10,15 +10,15 @@
         <Image Source="bg_reg.png" Stretch="Fill" />
         <Image Source="ram_reg.png" Stretch="Fill" Margin="-17,-42,-18,-14" />
 
-        <TextBlock Text="Авторизация" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="163,16,189,0" Foreground="White" Height="22" Width="210" TextAlignment="Center"/>
+        <TextBlock Text="Авторизация" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="184,16,168,0" Foreground="White" Height="22" Width="210" TextAlignment="Center"/>
 
-        <TextBox x:Name="InputLoginTextBox" Width="445" Height="38" Margin="42,54,75,227" VerticalAlignment="Center" HorizontalAlignment="Center" GotFocus="InputTextBox_GotFocus" LostFocus="InputTextBox_LostFocus"/>
-        <TextBlock x:Name="PlaceholderLTextBlock" Text="Логин" Foreground="Gray" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="49,62,0,227" IsHitTestVisible="False" Opacity="0.5" Height="30" Width="438"/>
-        <TextBox x:Name="InputPassWTextBox" Width="445" Height="38" Margin="42,127,75,154" VerticalAlignment="Center" HorizontalAlignment="Center" GotFocus="InputTextBox_GotFocus" LostFocus="InputTextBox_LostFocus"/>
-        <TextBlock x:Name="PlaceholderPTextBlock" Text="Пороль" Foreground="Gray" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="49,136,0,154" IsHitTestVisible="False" Opacity="0.5" Height="29" Width="438"/>
-        <Button x:Name="LogIn" Content="Войти" Width="105" Height="36" Click="SubmitButton_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="212,192,245,91" />
+        <Label Content="Введите логин:" VerticalAlignment="Top" Margin="66,37,51,0" Foreground="White"/>
+        <TextBox x:Name="loginTextBox" VerticalAlignment="Top" Margin="66,68,51,0" Height="38"/>
+        <Label Content="Введите пароль:" VerticalAlignment="Top" Margin="66,122,51,0" Foreground="White"/>
+        <PasswordBox x:Name="passwordBox" VerticalAlignment="Top" Margin="66,153,51,0" Height="38" />
+        <Button x:Name="LogIn" Content="Войти" Width="105" Height="36" Click="LoginButton_Click" Foreground="White" Background="#FF89552D" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="235,213,222,70" />
 
-        <TextBlock Text="Создать аккаунт" FontSize="12" Foreground="White" TextDecorations="Underline" MouseDown="TextBlock_MouseDown" Cursor="Hand" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="182,264,220,37" Height="18" Width="160" TextAlignment="Center"/>
+        <TextBlock Text="Создать аккаунт" FontSize="12" Foreground="White" TextDecorations="Underline" MouseDown="TextBlock_MouseDown" Cursor="Hand" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="209,265,193,36" Height="18" Width="160" TextAlignment="Center"/>
 
     </Grid>
 </Window>

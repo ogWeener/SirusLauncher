@@ -48,7 +48,7 @@ namespace SirusLauncher
             string filePath = FindPathTextBox.Text;
 
             // Проверяем, существует ли файл
-            if (System.IO.File.Exists(filePath))
+            if (File.Exists(filePath))
             {
                 // Открываем проводник с указанным файлом
                 Process.Start(new ProcessStartInfo("explorer.exe", $"/select,\"{filePath}\"") { UseShellExecute = true });

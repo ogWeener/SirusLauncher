@@ -20,6 +20,11 @@ namespace SirusLauncher
     /// </summary>
     public partial class Accaunt : Window
     {
+        string login = "Leroy Jenkins";
+        string password = "12345";
+
+        public event Action OnToggleLogin;
+
         public Accaunt()
         {
             InitializeComponent();
@@ -31,32 +36,30 @@ namespace SirusLauncher
             Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
         }
 
-        private void InputTextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            PlaceholderLTextBlock.Visibility = Visibility.Collapsed;
-            PlaceholderPTextBlock.Visibility = Visibility.Collapsed;
-        }
 
-        private void InputTextBox_LostFocus(object sender, RoutedEventArgs e)
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(InputLoginTextBox.Text))
+            string Ulogin = loginTextBox.Text; // Получаем введённый логин
+            string Upassword = passwordBox.Password; //Получаем введённый пороль
+            if (login == Ulogin && Upassword != password)
             {
-                PlaceholderLTextBlock.Visibility = Visibility.Visible;
+                MessageBox.Show("Неправильный пороль! Повторите попытку.");
             }
-            if (string.IsNullOrWhiteSpace(InputPassWTextBox.Text))
+            else if (login != Ulogin)
             {
-                PlaceholderPTextBlock.Visibility = Visibility.Visible;
+                MessageBox.Show("Не найден пользователь. Проверьте верность написания логина.");
             }
-        }
-
-        private void SubmitButton_Click(object sender, RoutedEventArgs e)
-        {
-            string inputLText = InputLoginTextBox.Text;
-            string inputPText = InputPassWTextBox.Text;
-
-            MessageBox.Show($"Вы ввели: {inputLText}, {inputPText}");
-            MainWindow imageStart = new MainWindow();
-            imageStart.AccauntImage.Visibility = Visibility.Visible;
+            else if (login == Ulogin && password == Upassword)
+            {
+                OnToggleLogin?.Invoke();
+                Authorized aut = new Authorized();
+                aut.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Неверно введены данные. Повторите попытку.");
+            }
         }
     }
 }

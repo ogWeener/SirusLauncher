@@ -27,6 +27,8 @@ namespace SirusLauncher
         private readonly DispatcherTimer timer;
         private int progressValue;
 
+        public bool isLogIn { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -40,12 +42,13 @@ namespace SirusLauncher
             imagePaths = new List<string>
             {
                 //изображения в обновлениях
-                "Images/фото обновление.png",
-                "Images/фото обновление.png",
-                "Images/фото обновление.png"
+                "фото обновление.png",
+                "обнова 2.png",
+                "обнова 3.png"
             };
 
             currentIndex = 0;
+            isLogIn = false;
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
@@ -72,8 +75,8 @@ namespace SirusLauncher
 
         private void UpdateImage()
         {
-            _ = new BitmapImage(new Uri(imagePaths[currentIndex], UriKind.Relative));
-            //MainImage.Source = bitmap;
+            BitmapImage bitmap = new BitmapImage(new Uri(imagePaths[currentIndex], UriKind.Relative));
+            MainImage.Source = bitmap;
         }
 
         private void NextButton_Click(object sender, RoutedEventArgs e)
@@ -127,8 +130,23 @@ namespace SirusLauncher
         }
         private void Accaunt_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Accaunt popup = new Accaunt();
-            popup.ShowDialog(); // создание модального окна
+            if (isLogIn == true)
+            {
+                Authorized popsup = new Authorized();
+                popsup.OnToggleLogin += ToggleLogin;
+                popsup.ShowDialog();
+            }
+            else
+            {
+                Accaunt popup = new Accaunt();
+                popup.OnToggleLogin += ToggleLogin;
+                popup.ShowDialog(); // создание модального окна
+            }
+        }
+
+        public void ToggleLogin()
+        {
+            isLogIn = !isLogIn;
         }
 
         private void Settings_MouseDown(object sender, MouseButtonEventArgs e)

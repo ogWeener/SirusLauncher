@@ -21,19 +21,17 @@
         <Image Source="settings.png" MouseDown="Settings_MouseDown" Margin="788,258,26,209" Cursor="Hand"/>
 
         <Image x:Name="MainImage" Source="фото обновление.png" Margin="346,60,108,167"/>
-        <Button x:Name="PreviousButton" Content="◀" Click="PreviousButton_Click" Width="50" Margin="374,121,448,223" />
-        <Button x:Name="NextButton" Content="▶" Click="NextButton_Click" Width="50" Margin="680,121,142,223" />
+        <Button x:Name="PreviousButton" Content="◀" Click="PreviousButton_Click" Width="50" Margin="376,121,446,223" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" />
+        <Button x:Name="NextButton" Content="▶" Click="NextButton_Click" Width="50" Margin="680,121,142,223" BorderThickness="1" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" />
         <Image x:Name="AccauntImage" Source="фото акк.png" Margin="74,78,566,35" Stretch="Fill"/>
 
-        <Button x:Name="StartButton" Content="Старт" Width="68" Height="73" Click="StartButton_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="475,421,329,35" />
-        <Button x:Name="BeginButton" Content="Начать" Width="267" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="569,414,36,35" />
+        <Image x:Name="StartButton" Source="preRender.png" MouseDown="StartButton_Click" Margin="475,414,325,35" Cursor="Hand"/>
+        <Button x:Name="BeginButton" Content="Играть" Width="267" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="569,414,36,35" FontSize="30" Foreground="White" Background="#FF89552D" BorderBrush="#FF746D6D" Padding="1" UseLayoutRounding="False"/>
         <ProgressBar x:Name="ProgressBar" Width="267" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="569,414,36,35" Visibility="Hidden" />
 
         <Image Source="рамка акк.png" Margin="50,78,548,35" Stretch="Fill" />
 
         <Image x:Name="AccauntNameImage" Source="кнопка.png" Margin="74,384,566,65" Stretch="Fill"/>
         <TextBlock Text="Leroy Jenkins" FontSize="21" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="96,405,594,0" Foreground="White" Height="34" Width="182" TextAlignment="Center"/>
-
-
     </Grid>
 </Window>
